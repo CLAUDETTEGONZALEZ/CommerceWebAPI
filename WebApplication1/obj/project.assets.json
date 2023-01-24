@@ -229,9 +229,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\claud\\Desktop\\Talleres\\CommerceWebAPI\\WebApplication1\\WebApplication1.csproj",
-      "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\claud\\Desktop\\Talleres\\CommerceWebAPI\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\claud\\Desktop\\Talleres\\CommerceWebAPI\\WebApplication1\\APIService.csproj",
+      "projectName": "APIService",
+      "projectPath": "C:\\Users\\claud\\Desktop\\Talleres\\CommerceWebAPI\\WebApplication1\\APIService.csproj",
       "packagesPath": "C:\\Users\\claud\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\claud\\Desktop\\Talleres\\CommerceWebAPI\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
