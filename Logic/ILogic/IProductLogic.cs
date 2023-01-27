@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities.Entities
+namespace Logic.ILogic
 {
-    internal class UserItem
+    internal class IProductLogic
     {
     }
 }
