@@ -16,5 +16,9 @@ namespace APIService.Service
             _orderLogic.InsertOrderItem(orderItem);
             return orderItem.Id;
         }
+        public List<OrderItem> GetAllOrders()
+        {
+            return _orderLogic.GetAllOrders();
+        }
     }
 }

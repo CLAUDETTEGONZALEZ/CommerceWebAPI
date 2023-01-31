@@ -1,5 +1,6 @@
 ﻿
 using APIService.IService;
+using APIService.Service;
 using Entities.Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,6 +22,11 @@ namespace APIService.Controllers
         public int Post([FromBody] OrderItem orderItem)
         {
             return _orderService.InsertOrder(orderItem);
+        }
+        [HttpGet(Name = "GetAllOrderss")]
+        public List<OrderItem> GetAll()
+        {
+            return _orderService.GetAllOrders();
         }
     }
 }

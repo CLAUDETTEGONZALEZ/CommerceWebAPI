@@ -12,10 +12,15 @@ namespace Logic.Logic
     public class OrderLogic : BaseContextLogic, IOrderLogic
     {
         public OrderLogic(ServiceContext serviceContext) : base(serviceContext) { }
-        public void InsertOrderItem(OrderItem orderItem)
+        public List<OrderItem> GetAllOrders()
+        {
+            return _serviceContext.Set<OrderItem>().ToList();
+        }
+        public int InsertOrderItem(OrderItem orderItem)
         {
             _serviceContext.Orders.Add(orderItem);
             _serviceContext.SaveChanges();
+            return orderItem.Id;
         }
     }
 }
