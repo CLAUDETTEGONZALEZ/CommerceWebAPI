@@ -1,4 +1,6 @@
-﻿using Entities.Entities;
+﻿using Data;
+using Entities.Entities;
+using Logic.Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +11,7 @@ namespace Logic.ILogic
 {
     public interface IProductLogic
     {
-        void InsertProductItem(ProductItem productItem);
+        List<ProductItem> GetAllProducts();
+        int InsertProductItem(ProductItem productItem);
     }
 }

@@ -4,7 +4,6 @@ namespace APIService.IService
 {
     public interface IOrderService
     {
-        int InsertOrderItem(OrderItem orderItem);
-    
+        int InsertOrder(OrderItem orderItem);
     }
 }

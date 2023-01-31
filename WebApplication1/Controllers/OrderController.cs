@@ -20,7 +20,7 @@ namespace APIService.Controllers
         [HttpPost(Name = "InsertOrder")]
         public int Post([FromBody] OrderItem orderItem)
         {
-            return _orderService.InsertOrderItem(orderItem);
+            return _orderService.InsertOrder(orderItem);
         }
     }
 }

@@ -1,12 +1,13 @@
 ﻿using APIService.IService;
 using Entities.Entities;
+using Logic.ILogic;
 
 namespace APIService.Service
 {
     public class UserService : IUserService
     {
-        private readonly IUserService _userLogic;
-        public UserService(IUserService userLogic)
+        private readonly IUserLogic _userLogic;
+        public UserService(IUserLogic userLogic)
         {
             _userLogic = userLogic;
         }
@@ -15,6 +16,5 @@ namespace APIService.Service
             _userLogic.InsertUserItem(userItem);
             return userItem.Id;
         }
-
     }
 }
