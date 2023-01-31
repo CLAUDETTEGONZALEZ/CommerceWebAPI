@@ -1,4 +1,5 @@
-﻿using APIService.IServices;
+﻿
+using APIService.IService;
 using Entities.Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,7 +20,7 @@ namespace APIService.Controllers
         [HttpPost(Name = "InsertOrder")]
         public int Post([FromBody] OrderItem orderItem)
         {
-            return _orderService.InsertOrder(orderItem);
+            return _orderService.InsertOrderItem(orderItem);
         }
     }
 }

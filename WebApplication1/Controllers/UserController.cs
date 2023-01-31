@@ -1,4 +1,4 @@
-﻿using APIService.IServices;
+﻿using APIService.IService;
 using Entities.Entities;
 using Microsoft.AspNetCore.Mvc;
 

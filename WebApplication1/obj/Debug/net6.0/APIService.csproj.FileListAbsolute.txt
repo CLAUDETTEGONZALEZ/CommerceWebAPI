@@ -1,0 +1,7 @@
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\WebApplication1\obj\Debug\net6.0\APIService.csproj.AssemblyReference.cache
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\WebApplication1\obj\Debug\net6.0\APIService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\WebApplication1\obj\Debug\net6.0\APIService.AssemblyInfoInputs.cache
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\WebApplication1\obj\Debug\net6.0\APIService.AssemblyInfo.cs
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\WebApplication1\obj\Debug\net6.0\APIService.csproj.CoreCompileInputs.cache
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\WebApplication1\obj\Debug\net6.0\APIService.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\WebApplication1\obj\Debug\net6.0\APIService.MvcApplicationPartsAssemblyInfo.cache

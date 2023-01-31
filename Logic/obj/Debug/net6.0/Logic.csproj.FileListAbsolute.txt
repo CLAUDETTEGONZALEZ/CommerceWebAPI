@@ -1,0 +1,17 @@
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\Logic\bin\Debug\net6.0\Logic.deps.json
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\Logic\bin\Debug\net6.0\Logic.dll
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\Logic\bin\Debug\net6.0\Logic.pdb
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\Logic\bin\Debug\net6.0\Data.dll
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\Logic\bin\Debug\net6.0\Entities.dll
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\Logic\bin\Debug\net6.0\Data.pdb
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\Logic\bin\Debug\net6.0\Entities.pdb
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\Logic\obj\Debug\net6.0\Logic.csproj.AssemblyReference.cache
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\Logic\obj\Debug\net6.0\Logic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\Logic\obj\Debug\net6.0\Logic.AssemblyInfoInputs.cache
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\Logic\obj\Debug\net6.0\Logic.AssemblyInfo.cs
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\Logic\obj\Debug\net6.0\Logic.csproj.CoreCompileInputs.cache
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\Logic\obj\Debug\net6.0\Logic.csproj.CopyComplete
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\Logic\obj\Debug\net6.0\Logic.dll
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\Logic\obj\Debug\net6.0\refint\Logic.dll
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\Logic\obj\Debug\net6.0\Logic.pdb
+C:\Users\claud\Desktop\Talleres\CommerceWebAPI\Logic\obj\Debug\net6.0\ref\Logic.dll
