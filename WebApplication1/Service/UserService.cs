@@ -16,5 +16,9 @@ namespace APIService.Service
             _userLogic.InsertUserItem(userItem);
             return userItem.Id;
         }
+        public List<UserItem> GetAllUsers() 
+        {
+            return _userLogic.GetAllUsers();
+        }
     }
 }

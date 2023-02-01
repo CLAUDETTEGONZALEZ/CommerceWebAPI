@@ -12,13 +12,16 @@ namespace Logic.Logic
     public class UserLogic : BaseContextLogic, IUserLogic
     {
         public UserLogic(ServiceContext serviceContext) : base(serviceContext) { }
-        public void InsertUserItem(UserItem userItem) 
+        public List<UserItem> GetAllUsers()
+        {
+            return _serviceContext.Set<UserItem>().ToList();
+        }
+        public void InsertUserItem(UserItem userItem)
         {
             _serviceContext.Users.Add(userItem);
             _serviceContext.SaveChanges();
         }
 
     }
-   
 
 }
