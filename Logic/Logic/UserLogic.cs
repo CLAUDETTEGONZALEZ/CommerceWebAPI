@@ -16,10 +16,11 @@ namespace Logic.Logic
         {
             return _serviceContext.Set<UserItem>().ToList();
         }
-        public void InsertUserItem(UserItem userItem)
+        public int InsertUserItem(UserItem userItem)
         {
             _serviceContext.Users.Add(userItem);
             _serviceContext.SaveChanges();
+            return userItem.Id;
         }
 
     }
