@@ -14,7 +14,6 @@ namespace Entities.Entities
         }
         public string UserName { get; set; }
         public bool IsActived { get; set; }
-        public int IdRol { get; set; }
         private string EncryptedPassword { get; set; }
     }
 }

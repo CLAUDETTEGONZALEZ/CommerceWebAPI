@@ -1,5 +1,6 @@
 ﻿using Data;
 using Entities.Entities;
+using Entities.SearchFilters;
 using Logic.Logic;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,11 @@ namespace Logic.ILogic
 {
     public interface IProductLogic
     {
-        void DeleteProductItem(int productId);
         List<ProductItem> GetAllProducts();
+        void DeleteProductItem(int productId);
+        void UpdateProduct(ProductItem productItem);
         int InsertProductItem(ProductItem productItem);
+        List<ProductItem> GetProductsByCriteria(ProductFilter productFilter);
 
     }
 }

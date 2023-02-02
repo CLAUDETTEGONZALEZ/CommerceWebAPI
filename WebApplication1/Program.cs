@@ -15,12 +15,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IProductService, ProductService>();
-builder.Services.AddScoped<IPersonService, PersonService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IUserService, UserService>();
 
 builder.Services.AddScoped<IProductLogic, ProductLogic>();
-builder.Services.AddScoped<IPersonLogic, PersonLogic>();
 builder.Services.AddScoped<IOrderLogic, OrderLogic>();
 builder.Services.AddScoped<IUserLogic, UserLogic>();
 
