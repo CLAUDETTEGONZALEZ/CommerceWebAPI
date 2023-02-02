@@ -11,7 +11,9 @@ namespace Logic.ILogic
 {
     public interface IProductLogic
     {
+        void DeleteProductItem(int productId);
         List<ProductItem> GetAllProducts();
         int InsertProductItem(ProductItem productItem);
+
     }
 }

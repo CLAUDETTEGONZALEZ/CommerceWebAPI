@@ -26,5 +26,15 @@ namespace APIService.Controllers
         {
             return _productService.GetAllProducts();
         }
+        /*[HttpPatch(Name = "ModifyProduct")]
+        public void Patch([FromBody]ProductItem productItem)
+        {
+            _productService.UpdateProduct(productItem);
+        }*/
+        [HttpDelete(Name = "DeleteProduct")]
+        public void Delete([FromQuery] int id) 
+        {
+            _productService.DeleteProduct(id);
+        }
     }
 }
