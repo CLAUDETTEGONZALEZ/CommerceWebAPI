@@ -10,6 +10,8 @@ namespace Logic.ILogic
     public interface IUserLogic
     {
         List<UserItem> GetAllUsers();
+        void DeleteUser(int userId);
+        void UpdateUser(UserItem userItem);
         int InsertUserItem(UserItem userItem);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using APIService.IService;
 using Entities.Entities;
 using Logic.ILogic;
+using Logic.Logic;
 
 namespace APIService.Service
 {
@@ -19,6 +20,14 @@ namespace APIService.Service
         public List<UserItem> GetAllUsers() 
         {
             return _userLogic.GetAllUsers();
+        }
+        public void UpdateUser(UserItem userItem)
+        {
+            _userLogic.UpdateUser(userItem);
+        }
+        public void DeleteUser(int userId)
+        {
+            _userLogic.DeleteUser(userId);
         }
     }
 }

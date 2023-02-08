@@ -27,5 +27,15 @@ namespace APIService.Controllers
         {
             return _userService.GetAllUsers();
         }
+        [HttpPatch(Name = "ModifyUser")]
+        public void Patch([FromBody] UserItem userItem)
+        {
+            _userService.UpdateUser(userItem);
+        }
+        [HttpDelete(Name = "DeleteUser")]
+        public void Delete([FromQuery] int id)
+        {
+            _userService.DeleteUser(id);
+        }
     }
 }

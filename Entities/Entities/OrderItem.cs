@@ -8,6 +8,9 @@ namespace Entities.Entities
 {
     public class OrderItem
     {
+        public OrderItem() {
+            IsActived= true;
+        }
         public int Id { get; set; }
         public Guid IdWeb { get; set; }
         public int ProductId { get; set; }
@@ -16,5 +19,6 @@ namespace Entities.Entities
         public DateTime DeliveryDate { get; set; }
         public bool IsDelivered { get; set; }
         public bool IsPayed { get; set; }
+        public bool IsActived { get; set; }
     }
 }

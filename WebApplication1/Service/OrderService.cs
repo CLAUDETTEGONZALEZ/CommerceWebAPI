@@ -1,6 +1,7 @@
 ﻿using APIService.IService;
 using Entities.Entities;
 using Logic.ILogic;
+using Logic.Logic;
 
 namespace APIService.Service
 {
@@ -19,6 +20,14 @@ namespace APIService.Service
         public List<OrderItem> GetAllOrders()
         {
             return _orderLogic.GetAllOrders();
+        }
+        public void UpdateOrder(OrderItem orderItem)
+        {
+            _orderLogic.UpdateOrder(orderItem);
+        }
+        public void DeleteOrder(int id)
+        {
+            _orderLogic.DeleteOrder(id);
         }
     }
 }

@@ -6,5 +6,7 @@ namespace APIService.IService
     {
         List<OrderItem> GetAllOrders();
         int InsertOrder(OrderItem orderItem);
+        void UpdateOrder(OrderItem orderItem);
+        void DeleteOrder(int id);
     }
 }

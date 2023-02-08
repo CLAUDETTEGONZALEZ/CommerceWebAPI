@@ -22,6 +22,18 @@ namespace Logic.Logic
             _serviceContext.SaveChanges();
             return userItem.Id;
         }
+        public void UpdateUser(UserItem userItem)
+        {
+            _serviceContext.Users.Update(userItem);
+            _serviceContext.SaveChanges();
+        }
+        public void DeleteUser(int id)
+        {
+            var userToDelete = _serviceContext.Set<UserItem>()
+                .Where(u => u.Id == id).First();
+            userToDelete.IsActived = false;
+            _serviceContext.SaveChanges();
+        }
 
     }
 

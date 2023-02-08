@@ -22,5 +22,17 @@ namespace Logic.Logic
             _serviceContext.SaveChanges();
             return orderItem.Id;
         }
+        public void UpdateOrder(OrderItem orderItem)
+        {
+            _serviceContext.Orders.Update(orderItem);
+            _serviceContext.SaveChanges();
+        }
+        public void DeleteOrder(int id)
+        {
+            var orderToDelete = _serviceContext.Set<OrderItem>()
+                 .Where(o => o.Id == id).First();
+            orderToDelete.IsActived = false;
+            _serviceContext.SaveChanges();
+        }
     }
 }

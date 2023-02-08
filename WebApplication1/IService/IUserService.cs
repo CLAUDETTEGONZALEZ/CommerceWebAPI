@@ -6,6 +6,8 @@ namespace APIService.IService
     {
         List<UserItem> GetAllUsers();
         int InsertUser(UserItem userItem);
-        
+        void UpdateUser(UserItem userItem);
+        void DeleteUser(int id);
+
     }
 }

@@ -28,5 +28,15 @@ namespace APIService.Controllers
         {
             return _orderService.GetAllOrders();
         }
+        [HttpPatch(Name = "ModifyOrder")]
+        public void Patch([FromBody] OrderItem orderItem)
+        {
+            _orderService.UpdateOrder(orderItem);
+        }
+        [HttpDelete(Name = "DeleteOrder")]
+        public void Delete([FromQuery] int id)
+        {
+            _orderService.DeleteOrder(id);
+        }
     }
 }
