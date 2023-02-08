@@ -17,6 +17,7 @@ namespace Data
         public ServiceContext(DbContextOptions<ServiceContext> options) : base(options) { }
         public DbSet<ProductItem> Products { get; set; }
         public DbSet<OrderItem> Orders { get; set; }
+        public DbSet<RolItem> Roles { get; set; }
         public DbSet<PersonItem> Persons { get; set; }
         public DbSet<UserItem> Users { get; set; }
         public DbSet<EmployeeItem> Employees { get; set; }
@@ -39,6 +40,12 @@ namespace Data
 
             builder.Entity<EmployeeItem>()
             .ToTable("Employees");
+
+            builder.Entity<RolItem>()
+          .ToTable("Roles");
+
+            builder.Entity<RolItem>()
+            .ToTable("Roles");
         }
     }
     public class ServiceContextFactory : IDesignTimeDbContextFactory<ServiceContext>

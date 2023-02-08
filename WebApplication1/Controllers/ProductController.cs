@@ -1,7 +1,9 @@
 ﻿using APIService.IService;
+using ApiWeb.IServices;
+using Data;
 using Entities.Entities;
-using Entities.SearchFilters;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Authentication;
 
 namespace APIService.Controllers
 {
@@ -9,40 +11,65 @@ namespace APIService.Controllers
     [Route("[controller]/[action]")]
     public class ProductController : ControllerBase
     {
-        private readonly ILogger<ProductController> _logger;
+        private readonly ISecurityService _securityService;
         private readonly IProductService _productService;
-        public ProductController(ILogger<ProductController> logger, IProductService productService)
+        private readonly IUserService _userService;
+        private readonly ServiceContext _serviceContext;
+        public ProductController(ISecurityService securityService, IProductService productService, IUserService userService, ServiceContext serviceContext)
         {
-            _logger = logger;
             _productService = productService;
+            _securityService = securityService;
+            _userService = userService;
+            _serviceContext = serviceContext;
         }
 
         [HttpPost(Name = "InsertProduct")]
-        public int Post([FromBody]ProductItem productItem)
+        public int Post([FromHeader] string userName, [FromHeader] string userPassword, [FromBody] ProductItem productItem)
         {
-            return _productService.InsertProduct(productItem);
+            var validCredentials = _securityService.ValidateUserCredentials(userName, userPassword, 1);
+            if (validCredentials == true)
+            {
+                return _productService.InsertProduct(productItem);
+            }
+            else
+            {
+                throw new InvalidCredentialException();
+            }
         }
-        [HttpGet(Name = "GetProductsByCriteria")]
-        public List<ProductItem> GetByCriteria(bool isActive)
-        {
-            var productFilter = new ProductFilter();
-            productFilter.IsActive = isActive;
-            return _productService.GetProductsByCriteria(productFilter);
-        }
+        
         [HttpGet(Name = "GetAllProducts")]
         public List<ProductItem> GetAll()
         {
             return _productService.GetAllProducts();
         }
+
         [HttpPatch(Name = "ModifyProduct")]
-        public void Patch([FromBody]ProductItem productItem)
+        public void Patch([FromHeader] string userName, [FromHeader] string userPassword, [FromBody] ProductItem productItem)
         {
-            _productService.UpdateProduct(productItem);
+            var validCredentials = _securityService.ValidateUserCredentials(userName, userPassword, 1);
+            if (validCredentials == true)
+            {
+                _productService.UpdateProduct(productItem);
+            }
+            else
+            {
+                throw new InvalidCredentialException();
+            }
         }
         [HttpDelete(Name = "DeleteProduct")]
-        public void Delete([FromQuery] int id) 
+        public void Delete([FromHeader] string userName, [FromHeader] string userPassword, [FromQuery] int id)
         {
-            _productService.DeleteProduct(id);
+            var validCredentials = _securityService.ValidateUserCredentials(userName, userPassword, 1);
+            if (validCredentials == true)
+            {
+                _productService.DeleteProduct(id);
+            }
+            else
+            {
+                throw new InvalidCredentialException();
+            }
+
         }
+
     }
 }

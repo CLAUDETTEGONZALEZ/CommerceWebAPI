@@ -1,6 +1,9 @@
 using APIService.IService;
 using APIService.Service;
+using ApiWeb.IServices;
+using ApiWeb.Service;
 using Data;
+using Entities.Entities;
 using Logic.ILogic;
 using Logic.Logic;
 using Microsoft.EntityFrameworkCore;
@@ -14,10 +17,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<ISecurityService, SecurityService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IUserService, UserService>();
 
+builder.Services.AddScoped<ISecurityLogic, SecurityLogic>();
 builder.Services.AddScoped<IProductLogic, ProductLogic>();
 builder.Services.AddScoped<IOrderLogic, OrderLogic>();
 builder.Services.AddScoped<IUserLogic, UserLogic>();
@@ -26,6 +31,8 @@ builder.Services.AddDbContext<ServiceContext>(
         options => options.UseSqlServer("name=ConnectionStrings:ServiceContext"));
 
 var app = builder.Build();
+var newProduct = new ProductItem();
+newProduct.Name = "Producto de prueba";
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

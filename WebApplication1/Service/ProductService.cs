@@ -1,6 +1,5 @@
 ﻿using APIService.IService;
 using Entities.Entities;
-using Entities.SearchFilters;
 using Logic.ILogic;
 
 namespace APIService.Service
@@ -20,10 +19,6 @@ namespace APIService.Service
         {
             _productLogic.InsertProductItem(productItem);
             return productItem.Id;
-        }
-        public List<ProductItem> GetProductsByCriteria(ProductFilter productFilter)
-        {
-            return _productLogic.GetProductsByCriteria(productFilter);
         }
         public void UpdateProduct(ProductItem productItem) 
         {

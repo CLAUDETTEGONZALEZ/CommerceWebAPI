@@ -1,6 +1,5 @@
 ﻿using Data;
 using Entities.Entities;
-using Entities.SearchFilters;
 using Logic.ILogic;
 using System;
 using System.Collections.Generic;
@@ -22,13 +21,6 @@ namespace Logic.Logic
             _serviceContext.Products.Add(productItem);
             _serviceContext.SaveChanges();
             return productItem.Id;
-        }
-        public List<ProductItem> GetProductsByCriteria(ProductFilter productFilter)
-        {
-            //ejemplo para IsActive solamente
-            return _serviceContext.Set<ProductItem>()
-                .Where(p => p.IsActive == productFilter.IsActive)
-                .ToList();
         }
         public void UpdateProduct(ProductItem productItem)
         {

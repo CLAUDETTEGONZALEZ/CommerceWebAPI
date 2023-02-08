@@ -1,41 +1,83 @@
 ﻿using APIService.IService;
-using APIService.Service;
+using ApiWeb.IServices;
+using ApiWeb.Service;
 using Entities.Entities;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Authentication;
 
-namespace APIService.Controllers
+namespace ApiWeb.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller] /[action]")]
     public class UserController : ControllerBase
     {
-        private readonly ILogger<ProductController> _logger;
+        private ISecurityService _securityService;
         private readonly IUserService _userService;
-        public UserController(ILogger<ProductController> logger, IUserService userService)
+    
+
+        public UserController(ISecurityService securityService, IUserService userService)
         {
-            _logger = logger;
+            _securityService = securityService;
             _userService = userService;
         }
 
         [HttpPost(Name = "InsertUser")]
-        public int Post([FromBody] UserItem userItem)
+        public int Post([FromHeader] string userName, [FromHeader] string userPassword, [FromBody] UserItem userItem)
         {
-            return _userService.InsertUser(userItem);
+            var validCredentials = _securityService.ValidateUserCredentials(userName, userPassword, 1);
+            if (validCredentials == true)
+            {
+                return _userService.InsertUser(userItem);
+            }
+            else
+            {
+                throw new InvalidCredentialException();
+            }
         }
+
         [HttpGet(Name = "GetAllUsers")]
-        public List<UserItem> GetAll()
+        public List<UserItem> GetAll([FromHeader] string userName, [FromHeader] string userPassword)
         {
-            return _userService.GetAllUsers();
+            var validCredentials = _securityService.ValidateUserCredentials(userName, userPassword, 1);
+            if (validCredentials == true)
+            {
+                return _userService.GetAllUsers();
+            }
+            else
+            {
+                throw new InvalidCredentialException();
+            }
         }
+
         [HttpPatch(Name = "ModifyUser")]
-        public void Patch([FromBody] UserItem userItem)
+        public void Patch([FromHeader] string userName, [FromHeader] string userPassword, [FromBody] UserItem userItem)
         {
-            _userService.UpdateUser(userItem);
+            var validCredentials = _securityService.ValidateUserCredentials(userName, userPassword, 1);
+            if (validCredentials == true)
+            {
+                _userService.UpdateUser(userItem);
+            }
+            else
+            {
+                throw new InvalidCredentialException();
+            }
+
         }
+
         [HttpDelete(Name = "DeleteUser")]
-        public void Delete([FromQuery] int id)
+        public void Delete([FromHeader] string userName, [FromHeader] string userPassword, [FromQuery] int id)
         {
-            _userService.DeleteUser(id);
+            var validCredentials = _securityService.ValidateUserCredentials(userName, userPassword, 1);
+            if (validCredentials == true)
+            {
+                _userService.DeleteUser(id);
+            }
+            else
+            {
+                throw new InvalidCredentialException();
+            }
+
         }
+
     }
 }
